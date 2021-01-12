@@ -1,8 +1,8 @@
 import express from "express";
-import UsuarioController from "./controllers/UsuarioController";
+import WhatsappController from "./controllers/WhatsappController";
 
 const routes = express.Router();
 
-routes.post('/usuarios', UsuarioController.listar);
+routes.post('/whatsapp/enviar', WhatsappController.enviar);
 
 export default routes;

@@ -1,11 +1,12 @@
 require('dotenv').config();
-import express from  'express';
+import express from 'express';
 import routes from "./routes";
 
 const app = express();
 
 app.use(express.json());
 app.use(routes);
+
 const host: any = process.env.HOST;
 const port: any = process.env.PORT;
 
