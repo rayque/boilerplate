@@ -2,6 +2,11 @@ import express from "express";
 import MensagemController from "./controllers/MensagemController";
 
 const routes = express.Router();
+routes.get('/', (req, res) => {
+    res.json("Server is running successfully!");
+});
+
+
 /*
 json example
 {

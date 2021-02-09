@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+   wsc:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    container_name: wsc
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    restart: always
+    env_file: ./.env
+    ports: 
+      - 3000:3001
