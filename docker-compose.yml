@@ -1,15 +1,29 @@
 version: '3.3'
 
+# services:
+#    wsc:
+#     build:
+#       dockerfile: ./Dockerfile
+#       context: .
+#     container_name: wsc
+#     volumes:
+#       - ./:/app
+#       - /app/node_modules
+#     restart: always
+#     env_file: ./.env
+#     ports: 
+#       - 3000:3001
+
+   
+#outra abordagem 
 services:
    wsc:
-    build:
-      dockerfile: ./Dockerfile
-      context: .
+    image: 'node:14-slim'
+    working_dir: /app
     container_name: wsc
     volumes:
       - ./:/app
-      - /app/node_modules
     restart: always
-    env_file: ./.env
     ports: 
       - 3000:3001
+    command: bash -c "cp .env.example .env && npm i && npm start"
